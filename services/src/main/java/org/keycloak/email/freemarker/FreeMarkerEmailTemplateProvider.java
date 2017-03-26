@@ -19,6 +19,7 @@ package org.keycloak.email.freemarker;
 
 import org.keycloak.broker.provider.BrokeredIdentityContext;
 import org.keycloak.common.util.ObjectUtil;
+import org.keycloak.common.util.HostUtils;
 import org.keycloak.email.EmailException;
 import org.keycloak.email.EmailSenderProvider;
 import org.keycloak.email.EmailTemplateProvider;
@@ -125,7 +126,10 @@ public class FreeMarkerEmailTemplateProvider implements EmailTemplateProvider {
     public void sendExecuteActions(String link, long expirationInMinutes) throws EmailException {
         Map<String, Object> attributes = new HashMap<String, Object>();
         attributes.put("user", new ProfileBean(user));
-        attributes.put("link", link);
+        if (null!=HostUtils.getUriHost())
+        	attributes.put("link", HostUtils.getUriHost());
+        else
+        	attributes.put("link", link);
         attributes.put("linkExpiration", expirationInMinutes);
 
         attributes.put("realmName", getRealmName());
