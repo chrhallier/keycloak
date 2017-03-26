@@ -29,6 +29,13 @@ public class HostUtils {
     public static String getHostName() {
         return getHostNameImpl().trim().toLowerCase();
     }
+    
+    public static String getUriHost() {
+    	String qualifiedUriHost = System.getenv("KEYCLOAK_SERVER_PUBLIC");
+        if (!(qualifiedUriHost.isEmpty()))
+            return qualifiedUriHost;
+        return null;
+    }
 
     public static String getIpAddress() {
         try {
