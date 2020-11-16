@@ -29,7 +29,7 @@
     <artifactId>keycloak-testsuite-jetty91</artifactId>
     <name>Keycloak Jetty 9.1.x Integration TestSuite</name>
     <properties>
-        <jetty9.version>9.1.5.v20140505</jetty9.version>
+        <jetty9.version>9.4.34.v20201102</jetty9.version>
     </properties>
     <description />
 
