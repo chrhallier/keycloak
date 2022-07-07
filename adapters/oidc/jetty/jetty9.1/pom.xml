@@ -29,7 +29,7 @@
 	<artifactId>keycloak-jetty91-adapter</artifactId>
 	<name>Keycloak Jetty 9.1.x Integration</name>
     <properties>
-        <jetty9.version>9.1.5.v20140505</jetty9.version>
+        <jetty9.version>10.0.10</jetty9.version>
         <keycloak.osgi.export>
             org.keycloak.adapters.jetty.*
         </keycloak.osgi.export>
